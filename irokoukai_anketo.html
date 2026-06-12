@@ -15,7 +15,6 @@
       overflow-x: hidden;
     }
 
-    /* ========== ヘッダー ========== */
     .hero {
       position: relative;
       background: linear-gradient(160deg, #0d1b2a 0%, #1a2f4a 60%, #0d1b2a 100%);
@@ -23,7 +22,6 @@
       overflow: hidden;
     }
 
-    /* 卓球台ネット */
     .net-line {
       width: 100%;
       height: 3px;
@@ -49,7 +47,6 @@
     .net-post-left { left: calc(15% - 4px); }
     .net-post-right { right: calc(15% - 4px); }
 
-    /* 卓球台サーフェス */
     .table-surface {
       background: linear-gradient(180deg, #1565a8 0%, #1a7ac9 40%, #1565a8 100%);
       height: 70px;
@@ -57,7 +54,6 @@
       overflow: hidden;
     }
     .table-surface::before {
-      /* センターライン */
       content: '';
       position: absolute;
       left: 50%; top: 0; bottom: 0;
@@ -66,7 +62,6 @@
       transform: translateX(-50%);
     }
     .table-surface::after {
-      /* サイドライン上 */
       content: '';
       position: absolute;
       left: 6%; right: 6%;
@@ -82,7 +77,6 @@
       background: rgba(255,255,255,0.3);
     }
 
-    /* ラケットSVG 左右に配置 */
     .racket-left, .racket-right {
       position: absolute;
       bottom: 8px;
@@ -91,7 +85,6 @@
     .racket-left { left: -10px; transform: rotate(-30deg); }
     .racket-right { right: -10px; transform: rotate(30deg) scaleX(-1); }
 
-    /* ボール群 */
     .balls-row {
       display: flex;
       justify-content: center;
@@ -107,7 +100,6 @@
       box-shadow: 0 2px 6px #00000055;
     }
 
-    /* ヒーローテキスト */
     .hero-text {
       text-align: center;
       padding: 18px 20px 0;
@@ -146,7 +138,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* ========== コンテンツ ========== */
     .container { max-width: 480px; margin: 0 auto; padding: 20px 14px 0; }
 
     .setup-note {
@@ -160,7 +151,6 @@
       line-height: 1.7;
     }
 
-    /* ========== カード ========== */
     .card {
       background: #0f2040;
       border: 1px solid #1e3a5f;
@@ -176,7 +166,6 @@
       display: flex; align-items: center; gap: 7px;
     }
 
-    /* 名前入力 */
     .name-input {
       width: 100%;
       padding: 13px 14px;
@@ -191,7 +180,6 @@
     .name-input::placeholder { color: #3a5570; }
     .name-input:focus { border-color: #ffd740; }
 
-    /* ========== コース行 ========== */
     .course-row {
       background: #071420;
       border: 1.5px solid #1e3a5f;
@@ -235,7 +223,6 @@
     .course-name { font-size: 13px; font-weight: bold; color: #d8e8f4; line-height: 1.3; }
     .course-price { font-size: 16px; font-weight: bold; color: #ffd740; margin-top: 2px; }
 
-    /* 人数カウンター */
     .counter {
       display: flex; align-items: center; gap: 0;
       background: #0d1b2a;
@@ -271,7 +258,6 @@
     }
     .counter-num.nonzero { color: #ffd740; }
 
-    /* 送信ボタン */
     .submit-btn {
       width: 100%;
       padding: 16px;
@@ -291,18 +277,51 @@
     .submit-btn:active { transform: translateY(0); }
     .submit-btn:disabled { background: #253545; color: #4a6070; cursor: not-allowed; box-shadow: none; transform: none; }
 
-    .success-msg {
-      color: #86efac; background: #0a2a1a; border: 1px solid #16a34a;
-      border-radius: 10px; padding: 12px; font-size: 14px;
-      text-align: center; margin-top: 10px; display: none;
+    /* 投票完了カード */
+    .success-card {
+      display: none;
+      background: #071e10;
+      border: 2px solid #22c55e;
+      border-radius: 14px;
+      padding: 16px;
+      margin-top: 12px;
     }
+    .success-card .sc-title {
+      color: #86efac;
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .success-card .sc-name {
+      color: #ffd740;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .success-card .sc-item {
+      display: flex; justify-content: space-between; align-items: center;
+      background: #0a2a18;
+      border-radius: 8px;
+      padding: 8px 12px;
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+    .success-card .sc-item-label { color: #a0d4b8; }
+    .success-card .sc-item-count { color: #ffd740; font-weight: bold; }
+    .success-card .sc-total {
+      text-align: right;
+      color: #86efac;
+      font-size: 13px;
+      margin-top: 6px;
+      font-weight: bold;
+    }
+
     .error-msg {
       color: #fca5a5; background: #2a0a0a; border: 1px solid #dc2626;
       border-radius: 10px; padding: 12px; font-size: 14px;
       text-align: center; margin-top: 10px; display: none;
     }
 
-    /* ========== 結果 ========== */
     .result-card {
       background: #0f2040;
       border: 1px solid #1e3a5f;
@@ -351,7 +370,6 @@
     }
     .loading { text-align: center; color: #3d5a7a; font-size: 14px; padding: 24px 0; }
 
-    /* ========== フッター卓球ネット ========== */
     .footer-net {
       width: 100%;
       height: 24px;
@@ -363,19 +381,15 @@
 </head>
 <body>
 
-<!-- ヘッダービジュアル -->
 <div class="hero">
-  <!-- 卓球台 -->
   <div class="table-surface">
     <div class="table-line-bottom"></div>
-    <!-- ラケット左 -->
     <svg class="racket-left" width="90" height="120" viewBox="0 0 90 120">
       <ellipse cx="45" cy="45" rx="36" ry="40" fill="#c0392b"/>
       <ellipse cx="45" cy="45" rx="36" ry="40" fill="none" stroke="#922b21" stroke-width="4"/>
       <line x1="45" y1="82" x2="45" y2="118" stroke="#7d6608" stroke-width="8" stroke-linecap="round"/>
       <ellipse cx="45" cy="45" rx="12" ry="13" fill="#922b21" opacity="0.5"/>
     </svg>
-    <!-- ラケット右 -->
     <svg class="racket-right" width="90" height="120" viewBox="0 0 90 120">
       <ellipse cx="45" cy="45" rx="36" ry="40" fill="#c0392b"/>
       <ellipse cx="45" cy="45" rx="36" ry="40" fill="none" stroke="#922b21" stroke-width="4"/>
@@ -383,20 +397,17 @@
       <ellipse cx="45" cy="45" rx="12" ry="13" fill="#922b21" opacity="0.5"/>
     </svg>
   </div>
-  <!-- ネット -->
   <div style="position:relative;">
     <div class="net-line">
       <div class="net-post-left"></div>
       <div class="net-post-right"></div>
     </div>
   </div>
-  <!-- ボール装飾 -->
   <div class="balls-row">
     <div class="ball-deco"></div>
     <div class="ball-deco" style="width:24px;height:24px;"></div>
     <div class="ball-deco"></div>
   </div>
-  <!-- テキスト -->
   <div class="hero-text">
     <div class="school-label">YUGUCHI JHS TABLE TENNIS CLUB</div>
     <h1>
@@ -413,7 +424,6 @@
     ⚠️ <strong>管理者の方へ：</strong> HTMLファイル内の <code>GAS_URL</code> にGoogle Apps ScriptのURLを貼り付けてください。
   </div>
 
-  <!-- 投票フォーム -->
   <div class="card">
     <div class="card-title">🏓 お名前を入力</div>
     <input type="text" id="nameInput" class="name-input" placeholder="例：山田 太郎" maxlength="20">
@@ -422,7 +432,6 @@
   <div class="card">
     <div class="card-title">📋 各コースの人数を選択</div>
 
-    <!-- 中学生 満腹コース -->
     <div class="course-row" id="row_0">
       <div class="course-top">
         <div class="course-left">
@@ -441,7 +450,6 @@
       </div>
     </div>
 
-    <!-- 小学生 団体コース -->
     <div class="course-row" id="row_1">
       <div class="course-top">
         <div class="course-left">
@@ -460,7 +468,6 @@
       </div>
     </div>
 
-    <!-- 大人 おすすめコース（お酒あり） -->
     <div class="course-row" id="row_2">
       <div class="course-top">
         <div class="course-left">
@@ -479,7 +486,6 @@
       </div>
     </div>
 
-    <!-- 大人 おすすめコース（ジュースのみ） -->
     <div class="course-row" id="row_3">
       <div class="course-top">
         <div class="course-left">
@@ -499,11 +505,18 @@
     </div>
 
     <button class="submit-btn" id="submitBtn" onclick="submitVote()">🏓 送信する</button>
-    <div class="success-msg" id="successMsg">✅ 送信完了！下の参加状況をご確認ください。</div>
+
+    <!-- 投票完了カード -->
+    <div class="success-card" id="successCard">
+      <div class="sc-title">✅ 投票完了！</div>
+      <div class="sc-name" id="scName"></div>
+      <div id="scItems"></div>
+      <div class="sc-total" id="scTotal"></div>
+    </div>
+
     <div class="error-msg" id="errorMsg">❌ エラーが発生しました。もう一度お試しください。</div>
   </div>
 
-  <!-- 結果 -->
   <div class="result-card">
     <div class="result-title">
       📊 参加状況（リアルタイム）
@@ -517,17 +530,13 @@
 <div class="footer-net"></div>
 
 <script>
-  // ========================================
-  // ★ Google Apps ScriptのURLをここに貼る
-  // ========================================
   const GAS_URL = 'https://script.google.com/macros/s/AKfycbzqR9WxgYjLbihGNqdZilY8P3oabgxqVCWOwqLsIMCyjcqDIr8QoYkf1TIcIeTzafKuoQ/exec';
-  // ========================================
 
   const PLANS = [
-    { key: '中学生_満腹コース',               label: '中学生 満腹コース',              price: '¥1,800' },
-    { key: '小学生_団体コース',               label: '小学生 団体コース',              price: '¥1,450' },
-    { key: '大人_おすすめコース_お酒あり',     label: '大人 おすすめコース（お酒あり）', price: '¥4,000' },
-    { key: '大人_おすすめコース_ジュースのみ', label: '大人 おすすめコース（ジュースのみ）', price: '¥2,800' },
+    { key: '中学生_満腹コース',               label: '中学生 満腹コース',                   price: '¥1,800' },
+    { key: '小学生_団体コース',               label: '小学生 団体コース',                   price: '¥1,450' },
+    { key: '大人_おすすめコース_お酒あり',     label: '大人 おすすめコース（お酒あり）',      price: '¥4,000' },
+    { key: '大人_おすすめコース_ジュースのみ', label: '大人 おすすめコース（ジュースのみ）',  price: '¥2,800' },
   ];
 
   const counts = [0, 0, 0, 0];
@@ -541,8 +550,7 @@
     const el = document.getElementById('num_' + idx);
     el.textContent = counts[idx];
     el.className = 'counter-num' + (counts[idx] > 0 ? ' nonzero' : '');
-    const row = document.getElementById('row_' + idx);
-    row.className = 'course-row' + (counts[idx] > 0 ? ' has-count' : '');
+    document.getElementById('row_' + idx).className = 'course-row' + (counts[idx] > 0 ? ' has-count' : '');
   }
 
   async function submitVote() {
@@ -550,28 +558,37 @@
     if (!name) { alert('お名前を入力してください'); return; }
     const total = counts.reduce((a, b) => a + b, 0);
     if (total === 0) { alert('少なくとも1つのコースで人数を選択してください'); return; }
-    if (GAS_URL === 'YOUR_GAS_URL_HERE') {
-      alert('管理者がURLをまだ設定していません。');
-      return;
-    }
+    if (GAS_URL === 'YOUR_GAS_URL_HERE') { alert('管理者がURLをまだ設定していません。'); return; }
 
     const btn = document.getElementById('submitBtn');
     btn.disabled = true; btn.textContent = '送信中...';
-    document.getElementById('successMsg').style.display = 'none';
+    document.getElementById('successCard').style.display = 'none';
     document.getElementById('errorMsg').style.display = 'none';
 
-    // 選択されたコースごとにまとめて送信
     const entries = PLANS.map((p, i) => ({ plan: p.key, count: counts[i] })).filter(e => e.count > 0);
-    const payload = { action: 'vote', name, entries: JSON.stringify(entries) };
-    const params = new URLSearchParams(payload);
+    const params = new URLSearchParams({ action: 'vote', name, entries: JSON.stringify(entries) });
 
     try {
       const res = await fetch(GAS_URL + '?' + params.toString());
       const data = await res.json();
       if (data.status === 'ok') {
-        document.getElementById('successMsg').style.display = 'block';
+        // 投票内容を完了カードに表示
+        document.getElementById('scName').textContent = `${name} さんの投票内容`;
+        let itemsHtml = '';
+        let totalAmt = 0;
+        entries.forEach(e => {
+          const plan = PLANS.find(p => p.key === e.plan);
+          const price = parseInt(plan.price.replace(/[¥,]/g, ''));
+          totalAmt += price * e.count;
+          itemsHtml += `<div class="sc-item"><span class="sc-item-label">${plan.label}</span><span class="sc-item-count">${e.count}名（${plan.price}）</span></div>`;
+        });
+        document.getElementById('scItems').innerHTML = itemsHtml;
+        document.getElementById('scTotal').textContent = `合計金額目安：¥${totalAmt.toLocaleString()}`;
+        document.getElementById('successCard').style.display = 'block';
+
+        // フォームリセット
         document.getElementById('nameInput').value = '';
-        [0,1,2,3].forEach(i => changeCount(i, -counts[i]));
+        [0,1,2,3].forEach(i => { counts[i] = 0; changeCount(i, 0); });
         loadResults();
       } else {
         throw new Error(data.message || '不明なエラー');
@@ -587,7 +604,7 @@
   async function loadResults() {
     const area = document.getElementById('resultArea');
     if (GAS_URL === 'YOUR_GAS_URL_HERE') {
-      area.innerHTML = '<p style="color:#3d5a7a;text-align:center;padding:16px;font-size:13px;">URLが設定されると<br>ここに結果が表示されます</p>';
+      area.innerHTML = '<p style="color:#3d5a7a;text-align:center;padding:16px;font-size:13px;">URLが設定されると結果が表示されます</p>';
       return;
     }
     area.innerHTML = '<div class="loading">読み込み中...</div>';
